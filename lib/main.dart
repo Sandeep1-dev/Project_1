@@ -1,16 +1,21 @@
 import 'package:flutter/material.dart';
-
-import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:project_1/login_page.dart';
 
 void main(List<String> args) {
-  runApp(Project());
+  runApp(const project());
 }
 
-class Project extends StatelessWidget {
+class project extends StatelessWidget {
+  const project({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Text("Helllo My App"),
+    return MaterialApp(
+      home: const login(),
+      theme: ThemeData(
+          primarySwatch: Colors.green,
+          fontFamily: GoogleFonts.lato().fontFamily),
     );
   }
 }
