@@ -14,7 +14,7 @@ class project extends StatelessWidget {
     return MaterialApp(
       home: const login(),
       theme: ThemeData(
-          primarySwatch: Colors.green,
+          primarySwatch: Colors.teal,
           fontFamily: GoogleFonts.lato().fontFamily),
     );
   }
