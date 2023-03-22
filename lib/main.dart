@@ -15,7 +15,7 @@ class project extends StatelessWidget {
       home: const login(),
       theme: ThemeData(
           primarySwatch: Colors.teal,
-          fontFamily: GoogleFonts.lato().fontFamily),
+          fontFamily: GoogleFonts.quicksand().fontFamily),
     );
   }
 }
