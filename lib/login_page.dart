@@ -83,7 +83,7 @@ class _loginState extends State<login> {
                       if (value?.isEmpty ?? false) {
                         return "Username cannot be empty";
                       } else if (value!.length < 6) {
-                        return "Password Atlease 6 letters";
+                        return "Password Atleast 6 letters";
                       }
                       return null;
                     },
