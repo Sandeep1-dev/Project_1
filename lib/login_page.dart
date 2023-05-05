@@ -25,7 +25,7 @@ class _loginState extends State<login> {
       await Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => const home_page(),
+            builder: (context) => home_page(),
           ));
       setState(() {
         changeButton = false;
@@ -41,9 +41,13 @@ class _loginState extends State<login> {
         child: Form(
           key: _formkey,
           child: Column(children: [
-            Image.asset(
-              'assets/Images/Login2.png',
-              fit: BoxFit.cover,
+            Padding(
+              padding: const EdgeInsets.only(top: 30, bottom: 2),
+              child: Image.asset(
+                'assets/Images/logo_transparent.png',
+                scale: 4.5,
+                fit: BoxFit.contain,
+              ),
             ),
             const SizedBox(
               height: 20,
@@ -59,26 +63,36 @@ class _loginState extends State<login> {
               padding: const EdgeInsets.all(16.0),
               child: Column(
                 children: [
-                  TextFormField(
-                    decoration: const InputDecoration(
-                      hintText: "Enter UserName",
-                      labelText: "Username",
+                  Container(
+                    child: TextFormField(
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10)),
+                        hintText: "Enter UserName",
+                        labelText: "Username",
+                      ),
+                      validator: (value) {
+                        if (value?.isEmpty ?? false) {
+                          return "Username cannot be empty";
+                        }
+                        return null;
+                      },
+                      onChanged: (value) {
+                        name = value;
+                        setState(() {});
+                      },
                     ),
-                    validator: (value) {
-                      if (value?.isEmpty ?? false) {
-                        return "Username cannot be empty";
-                      }
-                      return null;
-                    },
-                    onChanged: (value) {
-                      name = value;
-                      setState(() {});
-                    },
+                  ),
+                  const SizedBox(
+                    height: 20,
                   ),
                   TextFormField(
                     obscureText: true,
-                    decoration: const InputDecoration(
-                        hintText: "Enter Password", labelText: "Password"),
+                    decoration: InputDecoration(
+                        border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10)),
+                        hintText: "Enter Password",
+                        labelText: "Password"),
                     validator: (value) {
                       if (value?.isEmpty ?? false) {
                         return "Username cannot be empty";
